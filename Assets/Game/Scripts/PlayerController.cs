@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
     [HideInInspector] public bool singleShot;
     [HideInInspector] public int maxAmmo;
     [HideInInspector] public int currentAmmo;
-    [HideInInspector] public float reloadTime;
+    [HideInInspector] public float reloadTime = 1f;
     [HideInInspector] public bool isReloading = false;
 
     int itemIndex;
