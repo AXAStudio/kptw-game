@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     [SerializeField] Item[] items;
 
-    public SingleShotGun ssg;
+    
 
     [HideInInspector] public bool singleShot;
     [HideInInspector] public int maxAmmo;
@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
             if (Input.GetKeyDown((i + 1).ToString()))
             {
                 EquipItem(i);
-                ssg.Reload();
                 break;
             }
         }
@@ -104,12 +103,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
             if (itemIndex >= items.Length - 1)
             {
                 EquipItem(0);
-                ssg.Reload();
             }
             else
             {
                 EquipItem(itemIndex + 1);
-                ssg.Reload();
             }
             
         }
@@ -118,12 +115,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
             if (itemIndex <= 0)
             {
                 EquipItem(items.Length - 1);
-                ssg.Reload();
             }
             else
             {
                 EquipItem(itemIndex - 1);
-                ssg.Reload();
             }
             
         }

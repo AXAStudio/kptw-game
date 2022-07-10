@@ -87,7 +87,7 @@ public class SingleShotGun : Gun
 
         PC.currentAmmo--;
 
-        PC.ammocounter.text = PC.currentAmmo.ToString() + "/" + PC.maxAmmo.ToString();
+        PC.ammocounter.text = PC.currentAmmo.ToString() + "/" + ((GunInfo)itemInfo).maxAmmo;
 
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         ray.origin = cam.transform.position;
