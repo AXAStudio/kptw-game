@@ -6570,7 +6570,6 @@ MonoBehaviour:
   items:
   - {fileID: 4902708084058064038}
   - {fileID: 6245465436549875644}
-  ssg: {fileID: 0}
   singleShot: 0
   maxAmmo: 0
   currentAmmo: 0
