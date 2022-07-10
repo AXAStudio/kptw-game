@@ -12332,7 +12332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInfo: {fileID: 11400000, guid: 14536ca3dc167fc48bf248d665602f9a, type: 2}
-  itemGameObject: {fileID: 4227840090754265711}
+  itemGameObject: {fileID: 5696085352028260317}
   bulletImpactPrefab: {fileID: 5480147233110506510, guid: 7057c2cc50ae7cd4cad5b0bc1b7d88f9, type: 3}
   ps: {fileID: 5214187798929886773}
   gunAnim: {fileID: 3289315623160676546}
@@ -12394,7 +12394,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c99413aa60ef9be4d9e2cf1b6965fdec, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
