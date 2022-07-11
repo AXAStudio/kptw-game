@@ -125,32 +125,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 
 
-        if (currentAmmo <= 0)
-        {
-            items[itemIndex].Reload();
-            return;
-        }
-
-        if (singleShot)
-        {
-            if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
-            {
-
-
-                items[itemIndex].Use();
-            }
-        }
-        else if (!singleShot)
-        {
-            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-            {
-            
-
-                items[itemIndex].Use();
-            }
-
-        }
-
         if (Input.GetMouseButton(1))
         {
             items[itemIndex].Aim();
