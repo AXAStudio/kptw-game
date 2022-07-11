@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1550242430604652669}
   - component: {fileID: 597738406631348867}
   - component: {fileID: 2275812169859641540}
-  m_Layer: 0
+  - component: {fileID: 8162194546681190954}
+  m_Layer: 7
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +115,28 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &8162194546681190954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087969513198189022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d315df4177d9b394bb6d1d8d3a2bcee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2275812169859641540}
+  explosion: {fileID: 0}
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 64
+  bounciness: 0
+  useGravity: 0
+  explosionDamage: 10
+  explosionRange: 0.3
+  explosionForce: 0
+  maxCollisions: 1
+  maxLifetime: 10
+  explodeOnTouch: 1

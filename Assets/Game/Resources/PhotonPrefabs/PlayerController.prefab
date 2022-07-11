@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4771310904173527800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5718439947133788708}
   - component: {fileID: 1110870974501451302}
   - component: {fileID: 1364214581198121108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 1407717999817957975}
   - component: {fileID: 4421120252046261791}
   - component: {fileID: 3356212792657815135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 7645435831134480200}
   - component: {fileID: 6347151429689355486}
   - component: {fileID: 307504246251496604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OnScreenCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 1430763130593020194}
   - component: {fileID: 3813938888918530928}
   - component: {fileID: 7294948817416965500}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: imagetostl_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6518520001781710952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 7590392403222040571}
   - component: {fileID: 2428122858212499575}
   - component: {fileID: 4049680499105229143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Username
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1389631203434911619}
   - component: {fileID: 838806715155385851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 6048886437691164425}
   - component: {fileID: 1301491404747942535}
   - component: {fileID: 3028502313502749688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 6225671186687281637}
   - component: {fileID: 4594464081004312822}
   - component: {fileID: 6897896821378286831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,7 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3774149282992852394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AmmoCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 6971529657614153861}
   - component: {fileID: 5629809568592867905}
   - component: {fileID: 2267921658367619265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,7 +1119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4917078948368785063}
   - component: {fileID: 748532562132773219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hand Blaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1183,7 +1183,7 @@ GameObject:
   - component: {fileID: 6798427639575046851}
   - component: {fileID: 2133910084420503509}
   - component: {fileID: 2904384315528885762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 4847282212271477281}
   - component: {fileID: 4904214485048510870}
   - component: {fileID: 4612226388168030861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthbarBackround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 560477401361595707}
   - component: {fileID: 2136163051969843665}
   - component: {fileID: 7510459174049864074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,7 +1451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887141544632433996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
