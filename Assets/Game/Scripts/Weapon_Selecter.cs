@@ -6,20 +6,20 @@ public class Weapon_Selecter : MonoBehaviour
 {
 
     public Transform[] weapons;
-    int i = 0;
+    public int i = 0;
 
     // Start is called before the first frame update
-
+    
     // Update is called once per frame
     void Update()
     {
         foreach ( Transform item in weapons)
         {
-            if (transform.GetSiblingIndex() == i){
+            if (item.GetSiblingIndex() == i){
                 item.gameObject.SetActive(true);
             }
 
-            else{
+            else if (item.GetSiblingIndex() != i) {
                 item.gameObject.SetActive(false);
             }
         }
@@ -27,7 +27,7 @@ public class Weapon_Selecter : MonoBehaviour
 
     public void Right(){
 
-        if (i == transform.childCount)
+        if (i == transform.childCount - 1)
             {
                 i = 0;
             }
@@ -44,7 +44,7 @@ public class Weapon_Selecter : MonoBehaviour
 
         if (i == 0)
         {
-            i = transform.childCount;
+            i = transform.childCount - 1;
         }
 
         else{
