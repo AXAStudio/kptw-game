@@ -5,26 +5,21 @@ using UnityEngine;
 public class Weapon_Selecter : MonoBehaviour
 {
 
-    public Transform[] weapons;
+    public GameObject[] weapons;
     public int i = 0;
 
     void Update()
     {
-        foreach ( Transform item in weapons)
-        {
-            if (item.GetSiblingIndex() == i){
-                item.gameObject.SetActive(true);
-            }
+        
+    }
 
-            else if (item.GetSiblingIndex() != i) {
-                item.gameObject.SetActive(false);
-            }
-        }
+    void Start() {
+        UpdateGS();
     }
 
     public void Right(){
 
-        if (i == transform.childCount - 1)
+        if (i == weapons.Length - 1)
             {
                 i = 0;
             }
@@ -33,20 +28,37 @@ public class Weapon_Selecter : MonoBehaviour
                 i++;
             }
 
-
+        UpdateGS();
 
     }
 
-        public void Left(){
+    public void Left(){
 
         if (i == 0)
         {
-            i = transform.childCount - 1;
+            i = weapons.Length - 1;
         }
 
         else{
             i--;
         }
 
+        UpdateGS();
+
+    }
+
+    void UpdateGS(){
+
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        GameObject gs = Instantiate(weapons[i], 
+        transform.position, Quaternion.identity);
+        gs.transform.localScale = new Vector3(1000,1000,1000);
+        gs.transform.parent = gameObject.transform;
+
     }
 }
+ 
