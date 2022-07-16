@@ -6,7 +6,7 @@ public class Weapon_Selecter : MonoBehaviour
 {
 
     public GameObject[] weapons;
-    public int i = 0;
+    public int i;
 
     void Update()
     {
@@ -14,6 +14,7 @@ public class Weapon_Selecter : MonoBehaviour
     }
 
     void Start() {
+        i = PlayerPrefs.GetInt("Gun Selected");
         UpdateGS();
     }
 
@@ -59,6 +60,10 @@ public class Weapon_Selecter : MonoBehaviour
         gs.transform.localScale = new Vector3(1000,1000,1000);
         gs.transform.parent = gameObject.transform;
 
+    }
+
+    public void SaveData(){
+        PlayerPrefs.SetInt("Gun Selected", i);
     }
 }
  
