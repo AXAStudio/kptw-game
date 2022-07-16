@@ -8,9 +8,6 @@ public class Weapon_Selecter : MonoBehaviour
     public Transform[] weapons;
     public int i = 0;
 
-    // Start is called before the first frame update
-    
-    // Update is called once per frame
     void Update()
     {
         foreach ( Transform item in weapons)
