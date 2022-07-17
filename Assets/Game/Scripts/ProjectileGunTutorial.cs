@@ -48,6 +48,23 @@ public class ProjectileGunTutorial : MonoBehaviour
         //make sure magazine is full
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        if (playerRb == null){
+            playerRb = transform.parent.parent.parent.GetComponent<Rigidbody>();
+        }
+
+        if (fpsCam == null){
+            fpsCam = transform.parent.parent.Find("Camera").GetComponent<Camera>();
+        }
+
+        if (attackPoint == null){
+            attackPoint = transform.Find("FirePoint");
+        }
+
+        if (ammunitionDisplay == null){
+
+            ammunitionDisplay = transform.parent.parent.parent.Find("OnScreenCanvas").Find("AmmoCounter").Find("Image").Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+            
+        }        
     }
 
     private void Update()

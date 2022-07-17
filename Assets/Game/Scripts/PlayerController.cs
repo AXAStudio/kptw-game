@@ -129,10 +129,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         {
             items[itemIndex].Aim();
         }
-        if (!Input.GetMouseButton(1))
-        {
-            items[itemIndex].DeAim();
-        }
 
         if (transform.position.y < -10f)
         {
