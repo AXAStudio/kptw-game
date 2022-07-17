@@ -1327,21 +1327,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3876282276610711265, guid: beee663a2169c214bbc109813036dd67, type: 3}
+    - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 4421120252046261791}
+    - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
+      propertyPath: spread
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
       propertyPath: playerRb
       value: 
       objectReference: {fileID: 1301491404747942535}
     - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
+      propertyPath: shootForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 887141544632433996}
     - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
+      propertyPath: recoilForce
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
+      propertyPath: magazineSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
       propertyPath: ammunitionDisplay
       value: 
       objectReference: {fileID: 7510459174049864074}
+    - target: {fileID: 333430217281805109, guid: 48643783e73a7b74480350098f81fd79, type: 3}
+      propertyPath: timeBetweenShooting
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2884125442686800083, guid: 48643783e73a7b74480350098f81fd79, type: 3}
       propertyPath: m_RootOrder
       value: 1
