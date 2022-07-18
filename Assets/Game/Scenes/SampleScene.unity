@@ -4193,8 +4193,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Tip: Sprint to Get To Other Players Quicker'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 985fd2a89affedd4ead879c21af7843f, type: 2}
-  m_sharedMaterial: {fileID: -8971636624428266046, guid: 985fd2a89affedd4ead879c21af7843f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 77ac9142620d54d469ee2a620084c1ff, type: 2}
+  m_sharedMaterial: {fileID: 127785774473212162, guid: 77ac9142620d54d469ee2a620084c1ff, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5658,7 +5658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas1: {fileID: 1958285290}
   canvas2: {fileID: 786941329}
-  titleTime: 4
+  titleTime: 10
 --- !u!4 &2098483115
 Transform:
   m_ObjectHideFlags: 0
