@@ -5658,7 +5658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas1: {fileID: 1958285290}
   canvas2: {fileID: 786941329}
-  titleTime: 10
+  titleTime: 3
 --- !u!4 &2098483115
 Transform:
   m_ObjectHideFlags: 0
