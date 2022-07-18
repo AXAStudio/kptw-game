@@ -125,39 +125,9 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 
 
-        if (currentAmmo <= 0)
-        {
-            items[itemIndex].Reload();
-            return;
-        }
-
-        if (singleShot)
-        {
-            if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
-            {
-
-
-                items[itemIndex].Use();
-            }
-        }
-        else if (!singleShot)
-        {
-            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-            {
-            
-
-                items[itemIndex].Use();
-            }
-
-        }
-
         if (Input.GetMouseButton(1))
         {
             items[itemIndex].Aim();
-        }
-        if (!Input.GetMouseButton(1))
-        {
-            items[itemIndex].DeAim();
         }
 
         if (transform.position.y < -10f)
@@ -197,7 +167,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
         itemIndex = _index;
 
-        items[itemIndex].itemGameObject.SetActive(true);
+        //items[itemIndex].itemGameObject.SetActive(true);
 
         if (previousItemIndex != -1)
         {
