@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
     {
         if (PV.IsMine)
         {
-            EquipItem(0);
             currentAmmo = maxAmmo;
         }
         else
@@ -81,54 +80,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         Move();
         Jump();
 
-        
-
-
-        if (isReloading)
-        {
-            return;
-        }
-
-        for (int i = 0; i < items.Length; i++)
-        {
-            if (Input.GetKeyDown((i + 1).ToString()))
-            {
-                EquipItem(i);
-                break;
-            }
-        }
-
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
-        {
-            if (itemIndex >= items.Length - 1)
-            {
-                EquipItem(0);
-            }
-            else
-            {
-                EquipItem(itemIndex + 1);
-            }
-            
-        }
-        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
-        {
-            if (itemIndex <= 0)
-            {
-                EquipItem(items.Length - 1);
-            }
-            else
-            {
-                EquipItem(itemIndex - 1);
-            }
-            
-        }
-
-
-
-        if (Input.GetMouseButton(1))
-        {
-            items[itemIndex].Aim();
-        }
+        healthBarImage.fillAmount = currentHealth / maxHealth;
 
         if (transform.position.y < -10f)
         {
@@ -160,37 +112,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         }
     }
 
-    void EquipItem(int _index)
-    {
-        if (_index == previousItemIndex)
-            return;
-
-        itemIndex = _index;
-
-        //items[itemIndex].itemGameObject.SetActive(true);
-
-        if (previousItemIndex != -1)
-        {
-            items[previousItemIndex].itemGameObject.SetActive(false);
-        }
-
-        previousItemIndex = itemIndex;
-
-        if (PV.IsMine)
-        {
-            Hashtable hash = new Hashtable();
-            hash.Add("itemIndex", itemIndex);
-            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-        }
-    }
-
-    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
-    {
-        if(!PV.IsMine && targetPlayer == PV.Owner)
-        {
-            EquipItem((int)changedProps["itemIndex"]);
-        }
-    }
 
     public void SetGroundedState(bool _grounded)
     {
