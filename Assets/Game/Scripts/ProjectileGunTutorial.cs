@@ -126,6 +126,7 @@ public class ProjectileGunTutorial : MonoBehaviour
 
         //Instantiate bullet/projectile
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", bullet.transform.name), attackPoint.position, Quaternion.identity, 0, new object[] { PV.ViewID });
         //Rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
 
