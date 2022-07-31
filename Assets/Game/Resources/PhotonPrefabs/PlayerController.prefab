@@ -1708,6 +1708,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   ammunitionDisplay: {fileID: 7510459174049864074}
   allowInvoke: 1
+  PV: {fileID: 0}
 --- !u!1 &6022945966938093787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +1772,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   ammunitionDisplay: {fileID: 7510459174049864074}
   allowInvoke: 1
+  PV: {fileID: 1717664445941808066}
 --- !u!1 &6075087070698287659
 GameObject:
   m_ObjectHideFlags: 0
