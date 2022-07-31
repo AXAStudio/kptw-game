@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
 /// Thanks for downloading my projectile gun script! :D
 /// Feel free to use it in any project you like!
@@ -42,6 +43,7 @@ public class ProjectileGunTutorial : MonoBehaviour
 
     //bug fixing :D
     public bool allowInvoke = true;
+    public PhotonView PV;
 
     private void Awake()
     {
@@ -69,6 +71,9 @@ public class ProjectileGunTutorial : MonoBehaviour
 
     private void Update()
     {
+        if (!PV.IsMine)
+            return;
+
         MyInput();
 
         //Set ammo display, if it exists :D

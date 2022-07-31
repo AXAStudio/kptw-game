@@ -4,15 +4,20 @@ using System;
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviourPunCallbacks, IDamageable {
 
     //Assingables
     public Transform playerCam;
     public Transform orientation;
         
-    PhotonView PV;
+    public PhotonView PV;
     //Other
     private Rigidbody rb;
+
+    const float maxHealth = 100;
+    float currentHealth = maxHealth;
+
+    PlayerManager playerManager;
 
     //Rotation and look
     private float xRotation;
@@ -274,6 +279,31 @@ public class PlayerMovement : MonoBehaviour {
 
     private void StopGrounded() {
         grounded = false;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        PV.RPC("RPC_TakeDamage", RpcTarget.All, damage);
+    }
+
+    [PunRPC]
+    void RPC_TakeDamage(float damage)
+    {
+        if (!PV.IsMine)
+            return;
+        currentHealth -= damage;
+
+        
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        playerManager.Die();
     }
     
 }
