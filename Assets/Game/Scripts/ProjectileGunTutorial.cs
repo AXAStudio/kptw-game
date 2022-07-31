@@ -43,7 +43,7 @@ public class ProjectileGunTutorial : MonoBehaviour
 
     //bug fixing :D
     public bool allowInvoke = true;
-    public PhotonView PV;
+    //public PhotonView PV;
 
     private void Awake()
     {
@@ -71,8 +71,6 @@ public class ProjectileGunTutorial : MonoBehaviour
 
     private void Update()
     {
-        if (!PV.IsMine)
-            return;
 
         MyInput();
 
