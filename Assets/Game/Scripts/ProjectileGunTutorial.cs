@@ -1,6 +1,8 @@
 ﻿
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
+using System.IO;
 
 /// Thanks for downloading my projectile gun script! :D
 /// Feel free to use it in any project you like!
@@ -42,6 +44,8 @@ public class ProjectileGunTutorial : MonoBehaviour
 
     //bug fixing :D
     public bool allowInvoke = true;
+    public PhotonView PV;
+    
 
     private void Awake()
     {
@@ -69,6 +73,7 @@ public class ProjectileGunTutorial : MonoBehaviour
 
     private void Update()
     {
+
         MyInput();
 
         //Set ammo display, if it exists :D
@@ -122,7 +127,8 @@ public class ProjectileGunTutorial : MonoBehaviour
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         //Instantiate bullet/projectile
-        GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+        //GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+        GameObject currentBullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", bullet.transform.name), attackPoint.position, Quaternion.identity, 0);
         //Rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
 
