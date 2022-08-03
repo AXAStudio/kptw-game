@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     int kills;
     int deaths;
+    int kd;
 
     void Awake()
     {
@@ -65,5 +66,15 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Find(Player player)
     {
         return FindObjectsOfType<PlayerManager>().SingleOrDefault(x => x.PV.Owner == player);
+    }
+
+    [PunRPC]
+    void RPC_GetKD()
+    {
+        kd = kills/deaths;
+
+        Hashtable hash = new Hashtable();
+        hash.Add("kd", kd);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
     }
 }
