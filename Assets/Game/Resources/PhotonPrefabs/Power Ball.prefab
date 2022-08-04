@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3937036895178103374}
-  explosion: {fileID: 0}
+  explosion: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 64
@@ -177,7 +177,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 7211087888005417715}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

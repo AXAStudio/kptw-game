@@ -2170,6 +2170,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 1180171801522406615, guid: aedfe08671dd7404eb7e85999ee880cf, type: 3}
   - {fileID: 635066842597645907, guid: a9af9337143db7b4d813d3411b663a53, type: 3}
+  - {fileID: 4222884279409785819, guid: 1f0fd5d05f4c7af4eb61c64c4df99a4a, type: 3}
   i: 0
 --- !u!1 &667057870
 GameObject:

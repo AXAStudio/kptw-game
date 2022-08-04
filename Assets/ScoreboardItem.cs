@@ -35,18 +35,13 @@ public class ScoreboardItem : MonoBehaviourPunCallbacks
             deathsText.text = deaths.ToString();
         }
 
-        if(player.CustomProperties.TryGetValue("kd", out object kd))
-        {
-            kdText.text = kd.ToString();
-        }
-
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
     {
         if(targetPlayer == player)
         {
-            if(changedProps.ContainsKey("kills") || changedProps.ContainsKey("deaths") || changedProps.ContainsKey("kd"))
+            if(changedProps.ContainsKey("kills") || changedProps.ContainsKey("deaths"))
             {
                 UpdateStats();
             }
