@@ -12,7 +12,6 @@ public class ScoreboardItem : MonoBehaviourPunCallbacks
     public TMP_Text usernameText;
     public TMP_Text killsText;
     public TMP_Text deathsText;
-    public TMP_Text kdText;
 
     Player player;
 
