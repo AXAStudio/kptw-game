@@ -51,5 +51,6 @@ public class PlayerGroundCheck : MonoBehaviour
         if (collision.gameObject == playerController.gameObject)
             return;
         playerController.SetGroundedState(true);
+        
     }
 }

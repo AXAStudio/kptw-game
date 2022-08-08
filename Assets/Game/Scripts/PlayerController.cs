@@ -19,10 +19,12 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     [SerializeField] Item[] items;
 
+    
+
     [HideInInspector] public bool singleShot;
     [HideInInspector] public int maxAmmo;
     [HideInInspector] public int currentAmmo;
-    [HideInInspector] public float reloadTime;
+    [HideInInspector] public float reloadTime = 1f;
     [HideInInspector] public bool isReloading = false;
 
     int itemIndex;
@@ -56,7 +58,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
     {
         if (PV.IsMine)
         {
-            EquipItem(0);
             currentAmmo = maxAmmo;
         }
         else
@@ -79,84 +80,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         Move();
         Jump();
 
-        
-
-
-        if (isReloading)
-        {
-            return;
-        }
-
-        for (int i = 0; i < items.Length; i++)
-        {
-            if (Input.GetKeyDown((i + 1).ToString()))
-            {
-                EquipItem(i);
-                break;
-            }
-        }
-
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
-        {
-            if (itemIndex >= items.Length - 1)
-            {
-                EquipItem(0);
-            }
-            else
-            {
-                EquipItem(itemIndex + 1);
-            }
-            
-        }
-        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
-        {
-            if (itemIndex <= 0)
-            {
-                EquipItem(items.Length - 1);
-            }
-            else
-            {
-                EquipItem(itemIndex - 1);
-            }
-            
-        }
-
-
-
-        if (currentAmmo <= 0)
-        {
-            items[itemIndex].Reload();
-            return;
-        }
-
-        if (singleShot)
-        {
-            if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
-            {
-
-
-                items[itemIndex].Use();
-            }
-        }
-        else if (!singleShot)
-        {
-            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-            {
-            
-
-                items[itemIndex].Use();
-            }
-
-        }
-
-        if (Input.GetMouseButton(1))
-        {
-            items[itemIndex].Aim();
-        }
-        if (!Input.GetMouseButton(1))
-        {
-            items[itemIndex].DeAim();
-        }
+        healthBarImage.fillAmount = currentHealth / maxHealth;
 
         if (transform.position.y < -10f)
         {
@@ -188,37 +112,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         }
     }
 
-    void EquipItem(int _index)
-    {
-        if (_index == previousItemIndex)
-            return;
-
-        itemIndex = _index;
-
-        items[itemIndex].itemGameObject.SetActive(true);
-
-        if (previousItemIndex != -1)
-        {
-            items[previousItemIndex].itemGameObject.SetActive(false);
-        }
-
-        previousItemIndex = itemIndex;
-
-        if (PV.IsMine)
-        {
-            Hashtable hash = new Hashtable();
-            hash.Add("itemIndex", itemIndex);
-            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-        }
-    }
-
-    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
-    {
-        if(!PV.IsMine && targetPlayer == PV.Owner)
-        {
-            EquipItem((int)changedProps["itemIndex"]);
-        }
-    }
 
     public void SetGroundedState(bool _grounded)
     {
@@ -234,14 +127,12 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     public void TakeDamage(float damage)
     {
-        PV.RPC("RPC_TakeDamage", RpcTarget.All, damage);
+        PV.RPC(nameof(RPC_TakeDamage), PV.Owner, damage);
     }
 
     [PunRPC]
-    void RPC_TakeDamage(float damage)
+    void RPC_TakeDamage(float damage, PhotonMessageInfo info)
     {
-        if (!PV.IsMine)
-            return;
         currentHealth -= damage;
 
         
@@ -249,6 +140,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         if (currentHealth <= 0)
         {
             Die();
+            PlayerManager.Find(info.Sender).GetKill();
         }
     }
 

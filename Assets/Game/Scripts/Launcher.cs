@@ -18,6 +18,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject roomListItemPrefab;
     [SerializeField] GameObject playerListItemPrefab;
     [SerializeField] GameObject startGameButton;
+    [SerializeField] GameObject GS;
 
     void Awake()
     {
@@ -87,6 +88,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
+        GS.GetComponent<Weapon_Selecter>().SaveData();
         PhotonNetwork.LoadLevel(1);
     }
 

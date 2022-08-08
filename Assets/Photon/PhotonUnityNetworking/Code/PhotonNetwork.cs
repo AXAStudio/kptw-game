@@ -2647,7 +2647,9 @@ namespace Photon.Pun
                 SendInstantiate(parameters, roomObject);
             }
 
-            go.SetActive(true);
+            if (go != null){
+                go.SetActive(true);
+            }
 
             // if IPunInstantiateMagicCallback is implemented on any script of the instantiated GO, let's call it directly:
             if (!PrefabsWithoutMagicCallback.Contains(parameters.prefabName))
