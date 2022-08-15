@@ -19,11 +19,13 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject playerListItemPrefab;
     [SerializeField] GameObject startGameButton;
     [SerializeField] GameObject GS;
+    public int nextscene;
 
     void Awake()
     {
         Instance = this;
     }
+
 
 
     // Start is called before the first frame update
@@ -45,6 +47,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         MenuManager.Instance.OpenMenu("title");
         Debug.Log("Joined Lobby");
     }
+
 
     public void CreateRoom()
     {
@@ -89,7 +92,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public void StartGame()
     {
         GS.GetComponent<Weapon_Selecter>().SaveData();
-        PhotonNetwork.LoadLevel(1);
+        PhotonNetwork.LoadLevel(nextscene);
     }
 
 
