@@ -33,6 +33,7 @@ public class CustomBullet : MonoBehaviour
     int collisions;
     PhysicMaterial physics_mat;
 
+
     private void Start()
     {
         Setup();
@@ -40,6 +41,7 @@ public class CustomBullet : MonoBehaviour
 
     private void Update()
     {
+
         //When to explode:
         if (collisions > maxCollisions) Explode();
 

@@ -45,6 +45,8 @@ public class ProjectileGunTutorial : MonoBehaviour
     //bug fixing :D
     public bool allowInvoke = true;
     public PhotonView PV;
+
+    public Transform player;
     
 
     private void Awake()
@@ -128,7 +130,7 @@ public class ProjectileGunTutorial : MonoBehaviour
 
         //Instantiate bullet/projectile
         //GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
-        GameObject currentBullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", bullet.transform.name), attackPoint.position, Quaternion.Euler(new Vector3(bullet.transform.rotation.x,bullet.transform.rotation.y,bullet.transform.rotation.z)), 0);
+        GameObject currentBullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", bullet.transform.name), attackPoint.position, Quaternion.Euler(new Vector3(player.rotation.x,player.rotation.y,player.rotation.z)), 0);
         //Rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
 
